@@ -55,16 +55,16 @@ def lambda_handler(event, context):
                            
                    
                 else:
-                    print(f'Cluster {cluster_name} has tags, So resources from cluster {cluster_name} are not being deleted...')
-                    message = message + f'Cluster {cluster_name} has tags, So resources from cluster {cluster_name} are not being deleted...'
+                    print(f'Cluster {cluster_name} has tags, So the cluster {cluster_name} is not being deleted...')
+                    message = message + f'Cluster {cluster_name} has tags, So the cluster {cluster_name} is not being deleted...'
                     return {
                         'message' :json.dumps(message, default=str)
                     }
 
             except Exception as e:
                 # Print the error message if there is a problem
-                print(f'Error deleting resources from cluster {cluster_name}: {e}')
-                message = message + f'Error deleting resources from cluster {cluster_name}: {e}'
+                print(f'Error deleting the cluster {cluster_name}: {e}')
+                message = message + f'Error deleting the cluster {cluster_name}: {e}'
                 return {
                     'message' :json.dumps(message, default=str)
                 }
